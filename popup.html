@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<script data-main="popup" src="require.js"></script>
+	<style>
+	body { background-color: #F8F8F8; }
+	body > * { margin: auto; }
+	section > h1 { font-size: 120%; margin: 0.4em 0; }
+	table { border-collapse: collapse; }
+	th { background-color: #369; color: #FFF; }
+	th[data-col] { cursor: pointer; }
+	th, td { padding: 0.1em 1em; border: 1px solid black; white-space: pre; }
+	ul { list-style: none; padding: 0; margin: 0; }
+	ul ul { padding-left: 1.1em; }
+	li { margin: 0.2em 0; }
+	li > * { vertical-align: middle; }
+	a { color: inherit; text-decoration: none; }
+
+	.symbol { text-align: center; }
+	.action { cursor: pointer; font-weight: bold; }
+
+	#controls { float: right; }
+	#controls-settings { position: relative; z-index: 10; }
+	#status span { padding: 0 0.2em; }
+	#last-update { text-align: right; font-size: 80%; margin: 0.3em 0; }
+	#settings { display: none; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: #F8F8F8; margin: 8px; }
+	</style>
+</head>
+<body>
+	<div id="controls"><button data-action="reload" title="更新所有資料">&#8634;</button><button id="controls-settings" data-action="settings" title="設定">&#10034;</button></div>
+	<section>
+		<table>
+			<thead id="status-headers"><th data-col="name">伺服器</th><th data-col="latency">回應時間</th><th title="登入狀態">&#10070;</th><th title="伺服器設定">&#10034;</th></thead>
+			<tbody id="status"></tbody>
+		</table>
+		<p id="last-update">最近更新時間: <span>N/A</span></p>
+	</section>
+	<section id="settings">
+		<h1>設定</h1>
+		<ul>
+			<li>
+				<input id="settings-autoRedirect" type="checkbox" value="autoRedirect" /><label for="settings-autoRedirect">自動使用最快的伺服器</label>
+				<ul>
+					<li><input id="settings-loggedInOnly" type="checkbox" value="loggedInOnly" /><label for="settings-loggedInOnly">只使用已登入的伺服器</label></li>
+				</ul>
+			</li>
+			<li><input id="settings-autoRetry" type="checkbox" value="autoRetry" /><label for="settings-autoRetry">讀取失敗時自動重試</label></li>
+			<li><input id="settings-newtab" type="checkbox" value="newtab" /><label for="settings-newtab">連結開新頁</label></li>
+		</ul>
+	</section>
+</body>
+</html>

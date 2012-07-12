@@ -1,0 +1,14 @@
+{
+	"name": "Helianthus.ciliaris",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"background": {
+		"page": "background.html"
+	},
+	"browser_action": {
+		"default_icon": "icon-19.png",
+		"default_title": "Helianthus.ciliaris",
+		"default_popup": "popup.html"
+	},
+	"permissions": ["idle", "tabs", "webRequest", "webRequestBlocking", "http://*.hkgolden.com/"]
+}
